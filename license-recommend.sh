@@ -35,7 +35,8 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                   }
 EOF
 )
-
+  
+  echo "Response: $response" >&2
   license=$(echo "$response" | jq -r '.content[0].text' | tr '\n' ' ' | sed 's/,//g')
 
   if [[ -z "$license" || "$license" == "null" ]]; then
