@@ -1,0 +1,5 @@
+Repository,Repository_url,AI_Recommended_License
+vagrant,https://github.com/hashicorp/vagrant,null 
+vagrant-installers,https://github.com/hashicorp/vagrant-installers,null 
+puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap,null 
+heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman,null 
