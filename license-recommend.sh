@@ -29,6 +29,7 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                   -d @- <<EOF
                   {
                     "model": "$MODEL",
+                    "max_tokens": 1024,
                     "messages": [
                       {"role": "user", "content": "$prompt"}
                     ]
