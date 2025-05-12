@@ -26,13 +26,13 @@ jobs:
               env:
                 CLAUDE_API_KEY: ${{ secrets.API_KEY }}
               run: |
-                chmod +x license_recommend.sh
-                ./license_recommend.sh
+                chmod +x license-recommend.sh
+                ./license-recommend.sh
 
             - name: Commit Updated CSV
               run: |
                 git config --global user.name "github-actions"
                 git config --global user.email "actions@github.com"
-                git add repos_with_licenses.csv
+                git add license-repo.csv
                 git commit -m "Add updated license recommendations [skip ci]" || echo "No changes to commit"
                 git push
