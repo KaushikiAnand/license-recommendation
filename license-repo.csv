@@ -1,19 +1,19 @@
 Repository,Repository_url,AI_Recommended_License
-vagrant,https://github.com/hashicorp/vagrant,MIT
+vagrant,https://github.com/hashicorp/vagrant,MPL-2.0
 vagrant-installers,https://github.com/hashicorp/vagrant-installers,MPL-2.0
 puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap,MIT
 heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman,MIT
 heroku-buildpack-rubygem-server,https://github.com/hashicorp/heroku-buildpack-rubygem-server,MIT
 packer,https://github.com/hashicorp/packer,MPL-2.0
 go-metrics,https://github.com/hashicorp/go-metrics,MIT
-net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc,MIT
+net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc,MPL-2.0
 memberlist,https://github.com/hashicorp/memberlist,MPL-2.0
 serf,https://github.com/hashicorp/serf,MPL-2.0
 logutils,https://github.com/hashicorp/logutils,MPL-2.0
-gomemcache,https://github.com/hashicorp/gomemcache,MPL-2.0
+gomemcache,https://github.com/hashicorp/gomemcache,MIT
 consul,https://github.com/hashicorp/consul,MPL-2.0
 raft,https://github.com/hashicorp/raft,MPL-2.0
 vagrant-spec,https://github.com/hashicorp/vagrant-spec,MPL-2.0
 mdns,https://github.com/hashicorp/mdns,No license
-vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,MPL-2.0
+vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,MIT
 terraform,https://github.com/hashicorp/terraform,No license
