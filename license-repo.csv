@@ -1,5 +1,4 @@
 Repository,Repository_url,AI_Recommended_License
-vagrant,https://github.com/hashicorp/vagrant,MPL-2.0
-vagrant-installers,https://github.com/hashicorp/vagrant-installers,MPL-2.0
-puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap,MPL-2.0
-heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman,MPL-2.0
+vagrant,https://github.com/hashicorp/vagrant,BUSL
+vagrant-installers,https://github.com/hashicorp/vagrant-installers,MIT
+puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap,MIT
