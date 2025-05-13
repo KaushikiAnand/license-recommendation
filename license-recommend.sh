@@ -3,7 +3,6 @@
 CSV_INPUT="repos.csv"
 CSV_OUTPUT="license-repo.csv"
 MODEL="claude-3-5-sonnet-20241022"
-RATE_LIMIT_DELAY=2
 
 if [[ ! -f "$CSV_INPUT" ]]; then
     echo "Error: CSV file not found."
@@ -46,7 +45,6 @@ EOF
   echo "$repo_name,$repo_url,$license" >> "$CSV_OUTPUT"
   echo "Processed: $repo_name"
 
-  sleep "$RATE_LIMIT_DELAY"
 done
 
 echo "All done. Results saved to: $CSV_OUTPUT"
