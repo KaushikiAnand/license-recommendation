@@ -14,6 +14,6 @@ gomemcache,https://github.com/hashicorp/gomemcache,MPL-2.0
 consul,https://github.com/hashicorp/consul,MPL-2.0
 raft,https://github.com/hashicorp/raft,MPL-2.0
 vagrant-spec,https://github.com/hashicorp/vagrant-spec,MPL-2.0
-mdns,https://github.com/hashicorp/mdns,MIT
-vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,No license
-terraform,https://github.com/hashicorp/terraform,MPL-2.0
+mdns,https://github.com/hashicorp/mdns,No license
+vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,MPL-2.0
+terraform,https://github.com/hashicorp/terraform,No license
