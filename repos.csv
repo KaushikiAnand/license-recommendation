@@ -3,3 +3,17 @@ vagrant,https://github.com/hashicorp/vagrant
 vagrant-installers,https://github.com/hashicorp/vagrant-installers
 puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap
 heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman
+heroku-buildpack-rubygem-server,https://github.com/hashicorp/heroku-buildpack-rubygem-server
+packer,https://github.com/hashicorp/packer
+go-metrics,https://github.com/hashicorp/go-metrics
+net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc
+memberlist,https://github.com/hashicorp/memberlist
+serf,https://github.com/hashicorp/serf
+logutils,https://github.com/hashicorp/logutils
+gomemcache,https://github.com/hashicorp/gomemcache
+consul,https://github.com/hashicorp/consul
+raft,https://github.com/hashicorp/raft
+vagrant-spec,https://github.com/hashicorp/vagrant-spec
+mdns,https://github.com/hashicorp/mdns
+vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog
+terraform,https://github.com/hashicorp/terraform
