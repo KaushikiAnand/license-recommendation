@@ -20,7 +20,7 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
       continue
   fi
 
-  prompt="Given an OSS Repository named '${repo_name}' with url '${repo_url}', based on Community engagement and Commercial differentiation recommend a license which should be used for the repo '${repo_name}'. You have to recommend the license as MIT or MPL-2.0 or BUSL, if none of then can be used return the value as No license."
+  prompt="Given an OSS Repository named '${repo_name}' with url '${repo_url}', based on Community engagement and Commercial differentiation recommend a license which should be used for the repo '${repo_name}'. You have to recommend the license as MIT or MPL-2.0 or BUSL."
 
   response=$(curl -s https://api.anthropic.com/v1/messages \
                   -H "x-api-key: $API_KEY"\
