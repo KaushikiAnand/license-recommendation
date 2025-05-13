@@ -30,7 +30,7 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
     Choose strictly one license from the following options: MIT, MPL-2.0, or BUSL.
     Respond with only the license name."
 
-  response=$(curl -s https://api.openai.com/v1/responses \
+  response=$(curl -s https://api.openai.com/v1/chat/completions \
                   -H "Authorization: Bearer $OPENAI_API_KEY" \
                   -H "Content-Type: application/json" \
                   -d @- <<EOF
@@ -39,8 +39,8 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                     "messages": [
                       {"role": "user", "content": "$prompt"}
                     ],
-                    "temperature": 0.3,
-                    "max_tokens": 10
+                    "temperature": 0,
+                    "max_tokens": 100
                   }
 EOF
 )
