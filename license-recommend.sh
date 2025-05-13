@@ -27,9 +27,7 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
     1. Community engagement — ability to foster contributions and adoption.
     2. Commercial differentiation — protecting commercial value or business interests.
 
-    Choose strictly one license from the following options: MIT, MPL-2.0, or BUSL.
-
-    Respond with only the license name (e.g., MIT, MPL-2.0, or BUSL). Do not include any explanation or additional text."
+    Choose strictly one license from the following options: MIT, MPL-2.0, or BUSL."
 
   response=$(curl -s https://api.anthropic.com/v1/messages \
                   -H "x-api-key: $API_KEY"\
