@@ -3,4 +3,3 @@ vagrant,https://github.com/hashicorp/vagrant
 vagrant-installers,https://github.com/hashicorp/vagrant-installers
 puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap
 heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman
-heroku-buildpack-rubygem-server,https://github.com/hashicorp/heroku-buildpack-rubygem-server
