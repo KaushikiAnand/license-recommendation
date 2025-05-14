@@ -38,9 +38,9 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                         --arg model "$MODEL" \
                         --arg prompt "$prompt" \
                         '{
-                          model: "$MODEL",
+                          model: $model,
                           messages: [
-                            {"role": "user", "content": "$prompt"}
+                            {"role": "user", "content": $prompt}
                           ],
                           temperature: 0,
                           max_tokens: 100
