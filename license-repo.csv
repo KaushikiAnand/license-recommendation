@@ -9,11 +9,11 @@ go-metrics,https://github.com/hashicorp/go-metrics,MIT
 net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc,MIT
 memberlist,https://github.com/hashicorp/memberlist,MPL-2.0
 serf,https://github.com/hashicorp/serf,MPL-2.0
-logutils,https://github.com/hashicorp/logutils,MIT
-gomemcache,https://github.com/hashicorp/gomemcache,MPL-2.0
+logutils,https://github.com/hashicorp/logutils,MPL-2.0
+gomemcache,https://github.com/hashicorp/gomemcache,MIT
 consul,https://github.com/hashicorp/consul,MPL-2.0
 raft,https://github.com/hashicorp/raft,MPL-2.0
-vagrant-spec,https://github.com/hashicorp/vagrant-spec,MPL-2.0
-mdns,https://github.com/hashicorp/mdns,No license
+vagrant-spec,https://github.com/hashicorp/vagrant-spec,No license
+mdns,https://github.com/hashicorp/mdns,MPL-2.0
 vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,No license
 terraform,https://github.com/hashicorp/terraform,MPL-2.0
