@@ -2,18 +2,18 @@ Repository,Repository_url,AI_Recommended_License
 vagrant,https://github.com/hashicorp/vagrant,MIT
 vagrant-installers,https://github.com/hashicorp/vagrant-installers,BUSL
 puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap,BUSL
-heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman,No license
-heroku-buildpack-rubygem-server,https://github.com/hashicorp/heroku-buildpack-rubygem-server,No license
-packer,https://github.com/hashicorp/packer,No license
-go-metrics,https://github.com/hashicorp/go-metrics,No license
-net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc,No license
-memberlist,https://github.com/hashicorp/memberlist,No license
-serf,https://github.com/hashicorp/serf,No license
+heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman,MIT
+heroku-buildpack-rubygem-server,https://github.com/hashicorp/heroku-buildpack-rubygem-server,MIT
+packer,https://github.com/hashicorp/packer,BUSL
+go-metrics,https://github.com/hashicorp/go-metrics,BUSL
+net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc,BUSL
+memberlist,https://github.com/hashicorp/memberlist,MIT
+serf,https://github.com/hashicorp/serf,BUSL
 logutils,https://github.com/hashicorp/logutils,MIT
-gomemcache,https://github.com/hashicorp/gomemcache,No license
-consul,https://github.com/hashicorp/consul,No license
-raft,https://github.com/hashicorp/raft,No license
-vagrant-spec,https://github.com/hashicorp/vagrant-spec,No license
-mdns,https://github.com/hashicorp/mdns,No license
-vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,No license
-terraform,https://github.com/hashicorp/terraform,No license
+gomemcache,https://github.com/hashicorp/gomemcache,MIT
+consul,https://github.com/hashicorp/consul,BUSL
+raft,https://github.com/hashicorp/raft,MIT
+vagrant-spec,https://github.com/hashicorp/vagrant-spec,BUSL
+mdns,https://github.com/hashicorp/mdns,MIT
+vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,BUSL
+terraform,https://github.com/hashicorp/terraform,MIT
