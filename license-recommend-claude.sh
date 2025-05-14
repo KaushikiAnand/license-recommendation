@@ -36,7 +36,7 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                   }
 EOF
 )
-  
+  echo "Response: $response" >&2 
   license=$(echo "$response" | jq -r '.content[0].text' | grep -oE '\b(MIT|BUSL|MPL-2\.0)\b' | head -n1)
 
   if [[ -z "$license" || "$license" == "null" ]]; then
