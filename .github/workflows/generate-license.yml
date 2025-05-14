@@ -16,11 +16,11 @@ jobs:
                 sudo apt-get update
                 sudo apt-get install -y jq curl
 
-            #- name: Set Claude API Key
-             # env:
-              #  API_KEY: ${{ secrets.API_KEY }}
-              #run: |
-               # echo "CLAUDE_API_KEY is set"
+            - name: Set Claude API Key
+              env:
+                API_KEY: ${{ secrets.API_KEY }}
+              run: |
+                echo "CLAUDE_API_KEY is set"
 
             - name: Set OpenAI API Key
               env:
@@ -28,12 +28,12 @@ jobs:
               run: |
                 echo "OPENAI_API_KEY is set"
 
-            #- name: Run License Generation Script using Claude
-             # env:
-              #  API_KEY: ${{ secrets.API_KEY }}
-              #run: |
-               # chmod +x license-recommend-claude.sh
-                #./license-recommend-claude.sh
+            - name: Run License Generation Script using Claude
+              env:
+                API_KEY: ${{ secrets.API_KEY }}
+              run: |
+                chmod +x license-recommend-claude.sh
+                ./license-recommend-claude.sh
 
             - name: Run License Generation Script using OpenAI
               env:
@@ -48,6 +48,7 @@ jobs:
               run: |
                 git config --global user.name "github-actions"
                 git config --global user.email "actions@github.com"
+                git add license-repo.csv
                 git add license-repo-openai.csv
                 git commit -m "Add updated license recommendations" || echo "No changes to commit"
                 git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
