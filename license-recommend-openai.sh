@@ -2,7 +2,7 @@
 
 CSV_INPUT="repos.csv"
 CSV_OUTPUT="license-repo-openai.csv"
-MODEL="gpt-4"
+MODEL="gpt-4.1-nano"
 RATE_LIMIT_DELAY=2
 
 if [[ ! -f "$CSV_INPUT" ]]; then
