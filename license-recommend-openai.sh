@@ -10,7 +10,7 @@ if [[ ! -f "$CSV_INPUT" ]]; then
     exit 1
 fi
 
-echo "Repository,Repository_url,AI_Recommended_License" > "$CSV_OUTPUT"
+echo "Repository,Repository_url,AI_Recommended_License,Reason" > "$CSV_OUTPUT"
 
 tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
   repo_name=$(echo "$repo_name" | xargs)
@@ -23,13 +23,12 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
   prompt="You are an expert in open-source licensing.
 
    Given the open-source repository \"$repo_name\" hosted at \"$repo_url\", recommend the most suitable license based on:
-
    1. Community engagement — fostering contributions and adoption.
    2. Commercial differentiation — protecting business interests.
-
    Choose strictly ONE license: MIT, MPL-2.0, or BUSL.
-
-   Respond ONLY with the license name (MIT, MPL-2.0, or BUSL) — no explanation, no formatting."
+   Respond ONLY with the license name and a short one-sentence reason. Format it like this (no bullet points, no markdown):
+   LICENSE: <MIT|MPL-2.0|BUSL>
+   REASON: <brief reason>"
 
   response=$(curl -s https://api.openai.com/v1/chat/completions \
                   -H "Authorization: Bearer $OPENAI_API_KEY" \
@@ -42,18 +41,23 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                           messages: [
                             {"role": "user", "content": $prompt}
                           ],
-                          temperature: 0,
-                          max_tokens: 100
+                          temperature: 0.3,
+                          max_tokens: 150
                          }')"
 )
   
-  license=$(echo "$response" | jq -r '.choices[0].message.content' | grep -iEo 'MPL-2\.0|BUSL|MIT' | head -n1)
+  license=$(echo "$response" | jq -r '.choices[0].message.content' | grep -iEo 'LICENSE: *(MIT|MPL-2\.0|BUSL)' | grep -iEo 'MIT|MPL-2\.0|BUSL' | head -n1)
+  reason=$(echo "$response" | jq -r '.choices[0].message.content' | grep -i '^REASON:' | sed 's/^REASON:[ ]*//')
 
   if [[ -z "$license" || "$license" == "null" ]]; then
       license="No license"
   fi
 
-  echo "$repo_name,$repo_url,$license" >> "$CSV_OUTPUT"
+  if [[ -z "$reason" || "$reason" == "null" ]]; then
+      reason="No reason provided"
+  fi
+
+  echo "$repo_name,$repo_url,$license,\"$reason\"" >> "$CSV_OUTPUT"
   echo "Processed: $repo_name"
 
   sleep "$RATE_LIMIT_DELAY"
