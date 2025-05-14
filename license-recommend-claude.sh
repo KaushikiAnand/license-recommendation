@@ -22,12 +22,14 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
 
   prompt="You are an expert in open-source licensing.
 
-    Given the open-source repository "${repo_name}" hosted at "${repo_url}", recommend the most suitable license based on the following criteria:
+   Given the open-source repository "${repo_name}" hosted at "${repo_url}", recommend the most suitable license based on:
 
-    1. Community engagement — ability to foster contributions and adoption.
-    2. Commercial differentiation — protecting commercial value or business interests.
+   1. Community engagement — fostering contributions and adoption.
+   2. Commercial differentiation — protecting business interests.
 
-    Choose strictly one license from the following options: MIT, MPL-2.0, or BUSL."
+   Choose strictly ONE license: MIT, MPL-2.0, or BUSL.
+
+   Respond ONLY with the license name (MIT, MPL-2.0, or BUSL) — no explanation, no formatting."
 
   response=$(curl -s https://api.anthropic.com/v1/messages \
                   -H "x-api-key: $API_KEY"\
