@@ -3,7 +3,7 @@
 CSV_INPUT="repos.csv"
 CSV_OUTPUT="license-repo.csv"
 MODEL="claude-3-5-sonnet-20241022"
-RATE_LIMIT_DELAY=2
+RATE_LIMIT_DELAY=13
 
 if [[ ! -f "$CSV_INPUT" ]]; then
     echo "Error: CSV file not found."
