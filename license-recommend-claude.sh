@@ -42,7 +42,7 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                   }
 EOF
 )
-
+  echo "Response: $response" >&2 
   full_text=$(echo "$response" | jq -r '.content[0].text')
   license=$(echo "$full_text" | grep -oE '\b(MIT|BUSL|MPL-2\.0)\b' | head -n1)
   reason=$(echo "$full_text" | sed -n '2p' | xargs)
