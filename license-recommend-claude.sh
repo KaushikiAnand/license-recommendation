@@ -10,7 +10,7 @@ if [[ ! -f "$CSV_INPUT" ]]; then
     exit 1
 fi
 
-echo "Repository,Repository_url,AI_Recommended_License" > "$CSV_OUTPUT"
+echo "Repository,Repository_url,AI_Recommended_License","Reason" > "$CSV_OUTPUT"
 
 tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
   repo_name=$(echo "$repo_name" | xargs)
@@ -20,7 +20,13 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
       continue
   fi
 
-  prompt="Given an OSS Repository named '${repo_name}' with url '${repo_url}', based on Community engagement and Commercial differentiation recommend a license which should be used for the repo '${repo_name}'.  You have to recommend the license as MIT or MPL-2.0 or BUSL. Respond ONLY with the license name (MIT, MPL-2.0, or BUSL) — no explanation, no formatting."
+  prompt="Given an OSS Repository named '${repo_name}' with URL '${repo_url}', based on community engagement and commercial differentiation, recommend a license from the following: MIT, MPL-2.0, or BUSL.
+  Respond with:
+  <license>
+  <short reason>
+  Where:
+  - <license> is one of: MIT, MPL-2.0, or BUSL (no formatting).
+  - <short reason> is a brief sentence explaining why this license is suitable."
 
   response=$(curl -s https://api.anthropic.com/v1/messages \
                   -H "x-api-key: $API_KEY"\
@@ -37,13 +43,19 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
 EOF
 )
 
-  license=$(echo "$response" | jq -r '.content[0].text' | grep -oE '\b(MIT|BUSL|MPL-2\.0)\b' | head -n1)
+  full_text=$(echo "$response" | jq -r '.content[0].text')
+  license=$(echo "$full_text" | grep -oE '\b(MIT|BUSL|MPL-2\.0)\b' | head -n1)
+  reason=$(echo "$full_text" | sed -n '2p' | xargs)
 
   if [[ -z "$license" || "$license" == "null" ]]; then
       license="No license"
   fi
 
-  echo "$repo_name,$repo_url,$license" >> "$CSV_OUTPUT"
+  if [[ -z "$reason" || "$reason" == "null" ]]; then
+      reason="No reason provided"
+  fi
+
+  echo "$repo_name,$repo_url,$license,\"$reason\"" >> "$CSV_OUTPUT"
   echo "Processed: $repo_name"
 
   sleep "$RATE_LIMIT_DELAY"
