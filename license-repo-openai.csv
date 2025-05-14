@@ -1,19 +1,19 @@
-Repository,Repository_url,AI_Recommended_License
-vagrant,https://github.com/hashicorp/vagrant,MIT
-vagrant-installers,https://github.com/hashicorp/vagrant-installers,BUSL
-puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap,BUSL
-heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman,MIT
-heroku-buildpack-rubygem-server,https://github.com/hashicorp/heroku-buildpack-rubygem-server,MIT
-packer,https://github.com/hashicorp/packer,BUSL
-go-metrics,https://github.com/hashicorp/go-metrics,BUSL
-net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc,BUSL
-memberlist,https://github.com/hashicorp/memberlist,MIT
-serf,https://github.com/hashicorp/serf,MIT
-logutils,https://github.com/hashicorp/logutils,MIT
-gomemcache,https://github.com/hashicorp/gomemcache,MIT
-consul,https://github.com/hashicorp/consul,BUSL
-raft,https://github.com/hashicorp/raft,MIT
-vagrant-spec,https://github.com/hashicorp/vagrant-spec,BUSL
-mdns,https://github.com/hashicorp/mdns,MIT
-vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,BUSL
-terraform,https://github.com/hashicorp/terraform,MIT
+Repository,Repository_url,AI_Recommended_License,Reason
+vagrant,https://github.com/hashicorp/vagrant,BUSL,"To effectively protect business interests and limit liability while encouraging community contributions, the Business Source License (BUSL) offers a balanced approach by allowing open-source use with restrictions on commercial deployment until a specified date."
+vagrant-installers,https://github.com/hashicorp/vagrant-installers,BUSL,"To effectively protect business interests and limit liability while encouraging community contributions, the Business Source License (BUSL) offers a balanced approach by allowing open-source use with restrictions on commercial deployment until the license transitions to an open license."
+puppet-bootstrap,https://github.com/hashicorp/puppet-bootstrap,BUSL,"To effectively protect business interests and limit liability while encouraging community contributions, the Business Source License (BUSL) offers a balanced approach by allowing open-source use with restrictions on commercial deployment, fostering engagement without compromising proprietary protections."
+heroku-buildpack-middleman,https://github.com/hashicorp/heroku-buildpack-middleman,BUSL,"To effectively protect business interests and limit liabilities while encouraging controlled contributions, the Business Source License (BUSL) offers a balanced approach suited for commercial differentiation."
+heroku-buildpack-rubygem-server,https://github.com/hashicorp/heroku-buildpack-rubygem-server,BUSL,"The Business Source License (BUSL) is designed to balance open-source collaboration with commercial protection, encouraging community engagement while safeguarding business interests."
+packer,https://github.com/hashicorp/packer,BUSL,"To clearly delineate commercial and proprietary rights, encouraging community contributions while protecting the company's business interests and preventing use in competing products."
+go-metrics,https://github.com/hashicorp/go-metrics,BUSL,"To effectively protect business interests while encouraging community contributions, the Business Source License (BUSL) offers a balance by allowing open-source use with restrictions that can be lifted after a set period, fostering both engagement and commercial differentiation."
+net-rpc-msgpackrpc,https://github.com/hashicorp/net-rpc-msgpackrpc,BUSL,"To effectively protect commercial interests and limit liabilities while encouraging controlled contributions, the Business Source License (BUSL) provides a balanced approach suitable for enterprise-focused projects."
+memberlist,https://github.com/hashicorp/memberlist,BUSL,"To clearly protect the company's proprietary interests while allowing controlled open-source collaboration, the Business Source License (BUSL) offers a balance by permitting open development but restricting commercial use without a license, thus fostering community engagement while safeguarding business differentiation."
+serf,https://github.com/hashicorp/serf,BUSL,"To effectively protect business interests and restrict certain uses while still allowing community engagement, the Business Source License (BUSL) offers a balanced approach by enabling open-source-like use with defined commercial restrictions."
+logutils,https://github.com/hashicorp/logutils,MIT,"The MIT license encourages community contributions and widespread adoption while providing minimal restrictions, aligning with open-source collaboration and growth."
+gomemcache,https://github.com/hashicorp/gomemcache,BUSL,"To clearly protect proprietary business interests while allowing community engagement through controlled contributions, the Business Source License (BUSL) offers a balanced approach suitable for commercial differentiation and open-source collaboration."
+consul,https://github.com/hashicorp/consul,BUSL,"To protect the company's commercial interests and restrict certain uses, ensuring control over derivative works and licensing terms."
+raft,https://github.com/hashicorp/raft,BUSL,"To protect commercial interests and ensure that derivative works are governed by a license that limits redistribution and use in proprietary contexts, aligning with HashiCorp's strategic protection of their technology."
+vagrant-spec,https://github.com/hashicorp/vagrant-spec,BUSL,"To effectively protect business interests and limit liability while encouraging community engagement, the Business Source License (BUSL) offers a balanced approach by allowing open-source use with restrictions on production deployment, fostering contributions without compromising commercial differentiation."
+mdns,https://github.com/hashicorp/mdns,MIT,"The MIT license encourages widespread community contributions and adoption while providing minimal restrictions, making it ideal for fostering engagement and broad usage."
+vagrant-plugin-changelog,https://github.com/hashicorp/vagrant-plugin-changelog,BUSL,"To effectively protect business interests and limit liability while fostering community engagement through clear licensing terms."
+terraform,https://github.com/hashicorp/terraform,BUSL,"The Business Source License (BUSL) is designed to balance open-source collaboration with commercial protection, encouraging community engagement while safeguarding business interests through its license transition provisions."
