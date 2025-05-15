@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    generate-licenses:
+    generate-licenses-openai:
         runs-on: ubuntu-latest
 
         steps:
