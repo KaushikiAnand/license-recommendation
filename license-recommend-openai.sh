@@ -2,7 +2,7 @@
 
 CSV_INPUT="repos.csv"
 CSV_OUTPUT="license-repo-openai.csv"
-MODEL="gpt-4.1-nano"
+MODEL="gpt-3.5-turbo"
 RATE_LIMIT_DELAY=20
 
 if [[ ! -f "$CSV_INPUT" ]]; then
@@ -46,8 +46,10 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                          }')"
 )
   
-  license=$(echo "$response" | jq -r '.choices[0].message.content' | grep -iEo 'LICENSE: *(MIT|MPL-2\.0|BUSL)' | grep -iEo 'MIT|MPL-2\.0|BUSL' | head -n1)
-  reason=$(echo "$response" | jq -r '.choices[0].message.content' | grep -i '^REASON:' | sed 's/^REASON:[ ]*//')
+  content=$(echo "$response" | jq -r '.choices[0].message.content // empty')
+
+  license=$(echo "$content" | grep -iEo 'LICENSE: *(MIT|MPL-2\.0|BUSL)' | grep -iEo 'MIT|MPL-2\.0|BUSL' | head -n1)
+  reason=$(echo "$content" | grep -i '^REASON:' | sed 's/^REASON:[ ]*//')
 
   if [[ -z "$license" || "$license" == "null" ]]; then
       license="No license"
