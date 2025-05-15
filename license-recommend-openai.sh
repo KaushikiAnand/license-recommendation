@@ -45,6 +45,7 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
                           max_tokens: 150
                          }')"
 )
+  echo "$response"
   
   content=$(echo "$response" | jq -r '.choices[0].message.content // empty')
 
