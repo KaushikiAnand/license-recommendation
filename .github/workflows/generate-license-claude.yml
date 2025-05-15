@@ -1,0 +1,41 @@
+name: Generating the License Recommendation
+
+on:
+    workflow_dispatch:
+
+jobs:
+    generate-licenses:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout the repo
+              uses: actions/checkout@v3
+
+            - name: Set Up jq & curl
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y jq curl
+
+            - name: Set Claude API Key
+              env:
+                API_KEY: ${{ secrets.API_KEY }}
+              run: |
+                echo "CLAUDE_API_KEY is set"
+
+            - name: Run License Generation Script using Claude
+              env:
+                API_KEY: ${{ secrets.API_KEY }}
+              run: |
+                chmod +x license-recommend-claude.sh
+                ./license-recommend-claude.sh
+
+            - name: Commit Updated CSV
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                git config --global user.name "github-actions"
+                git config --global user.email "actions@github.com"
+                git add license-repo.csv
+                git commit -m "Add updated license recommendations" || echo "No changes to commit"
+                git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+                git push
