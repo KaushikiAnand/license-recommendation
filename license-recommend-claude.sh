@@ -41,7 +41,9 @@ tail -n +2 "$CSV_INPUT" | while IFS=',' read -r repo_name repo_url; do
   **Instructions**:
     • Briefly (1-2 sentences each) assess the repo on each of the three criteria above.
     • Then give a final recommendation: “MPL”, “BUSL”, or “Legal Review,” with a one-sentence rationale.
-  **Note**: Use the metadata (stars/forks/watchers, topics) to calibrate your answer. If usage is low and the code is purely utility with no strategic IP, MPL is fine. If commercial value or strategic risk is high, prefer BUSL or “Legal Review.”
+  Respond ONLY with the license name and a short one-sentence reason. Format it like this (no bullet points, no markdown):
+  LICENSE: <MIT|MPL-2.0|BUSL>
+  REASON: <brief reason>
   Begin now."
 
   response=$(curl -s https://api.anthropic.com/v1/messages \
